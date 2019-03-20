@@ -5,18 +5,18 @@ zone "sitioa.com" {
         type master;
     file "/etc/bind/rd.sitioa.com"";
 };
-----------------------------------------
+
 zone "sitiob.net"{
         type master;
     file "/etc/bind/rd.sitiob.net";
 };
-----------------------------------------
+
 zone "sitioc.net" {
         type master;
     file "/etc/bind/rd.sitioc.net";
 };
-----------------------------------------
-// Resolución inversa
+
+
 
 zone "5.168.192.in-addr.arpa" {
     type master;
