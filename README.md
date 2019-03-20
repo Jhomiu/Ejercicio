@@ -1,37 +1,4 @@
 
-# Ejercicio-DNS
-
-Crear un servidor DNS con las siguientes zonas:  
-
-	- sitioa.com  
-  
-	- www web con información de java.  
-  
-	- ftp servidor ftp. 
-	- sitiob.net
-  
-	- www web con información de C#  
-  
-	- ftp servidor ftp.
-	- sitioc.net
-    
-	- www web con información de Oracle.  
-    
-	- ftp servidor ftp.  
-
-
-
-Crear una máquina virtual con un entorno gráfico. 
-
-Esta accederá a los sitios web. También tendrá acceso a cualquier sitio web de internet.
- 
-
-El servidor DNS será RAID 0.  
-Los Servidores web ftp serán RAID 5.
-
-
-Para Entregar:
-~~~
 				 							named.conf.local
 
 zone "sitioa.com" {
@@ -121,29 +88,16 @@ $TTL 38400
 21 IN PTR servidor02.
 @ IN NS servidor03.
 22 IN PTR servidor03.
-~~~
-
-Configuracion router:  
-  
-Editamos el archivo sysctl.conf:  
-~~~  
+ 
 nano /etc/sysctl.conf  
-~~~
-Descomentamos la linea:  
-~~~   
+  
 net.ipv4.ip_forward=1  
-~~~
-Creamos un archivo llamado router.sh  
-~~~  
+  
 nano router.sh
-~~~  
-Le añadimos las dos siguientes lineas:  
-~~~  
+
 #!/bin/bash  
 iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE  
-~~~  
-editamos  /etc/rc.local y le añadimos lo siguiente delante de Exit 0:  
-~~~   
+ 
 sh /home/usuario/router.sh  
 ~~~
 
