@@ -99,5 +99,6 @@ nano router.sh
 iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE  
   
 sh /home/usuario/router.sh  
-[raid0] (https://github.com/Jhomiu/Ejercicio/blob/master/raid0linux.JPG)
+! [raid0] (https://github.com/Jhomiu/Ejercicio/blob/master/raid0linux.JPG)
+! [raid5] (https://github.com/Jhomiu/Ejercicio/blob/master/raid5linux.JPG)
 
